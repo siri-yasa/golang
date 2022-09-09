@@ -11,16 +11,11 @@ type Account struct {
 }
 
 var (
-	a = Account{"siri", 101, 234}
-	b = Account{"vamshi", 102, 345}
-	c = Account{"aswini", 103, 567}
-	d = Account{"kiran", 104, 789}
-	//p = &Account{"lord", 100, 480} //has type of *Account
+	ali = Account{"siri", 101, 234}
+	bunny = Account{"vamshi", 102, 345}
+	cherry = Account{"aswini", 103, 567}
+	dany = Account{"kiran", 104, 789}
 )
-
-/*func (p *Account) deposit(dAmount int) {
-	p.balance = p.balance + dAmount
-}*/
 
 func deposit(depositAccount *Account, dAmount int) {
 	depositAccount.balance = depositAccount.balance + dAmount
@@ -40,12 +35,12 @@ func trasfer(withdrawAccount *Account, depositAccount *Account, dAmount int) {
 }
 
 func main() {
-	fmt.Println(a, b, c, d)
+	fmt.Println(ali, bunny, cherry, dany)
 
-	deposit(&b, 50)
+	deposit(&bunny, 50)
 
-	withdraw(&a, 200)
+	withdraw(&ali, 200)
 
-	trasfer(&c, &d, 100)
+	trasfer(&cherry, &dany, 100)
 
 }
