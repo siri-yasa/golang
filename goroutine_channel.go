@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+// This is a second line of the comment added
 func main() {
 	var intSlice = []int{91, 42, 23, 14, 15, 76, 87, 28, 19, 95}
 	chOdd := make(chan int)
