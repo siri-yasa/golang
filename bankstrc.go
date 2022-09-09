@@ -11,10 +11,10 @@ type Account struct {
 }
 
 var (
-	ali = Account{"siri", 101, 234}
-	bunny = Account{"vamshi", 102, 345}
+	ali    = Account{"siri", 101, 234}
+	bunny  = Account{"vamshi", 102, 345}
 	cherry = Account{"aswini", 103, 567}
-	dany = Account{"kiran", 104, 789}
+	dany   = Account{"kiran", 104, 789}
 )
 
 func deposit(depositAccount *Account, dAmount int) {
@@ -43,4 +43,5 @@ func main() {
 
 	trasfer(&cherry, &dany, 100)
 
+	trasfer(&cherry, &dany, 100)
 }

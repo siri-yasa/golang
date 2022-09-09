@@ -1,54 +1,56 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-var acct map[string]int
+var acct map[string] int
 var balance map[int]int
 
-func main() {
+acct["Sirisha"] = 101
+acct["Vamshi"] = 102
+acct["Aswini"] = 103
+acct["Kiran"] = 104
 
-	acct = make(map[string]int)
-	balance = make(map[int]int)
+balance[101]=300
+balance[102]=350
+balance[103]=400
+balance[104]=450
 
-	acct["Sirisha"] = 101
-	acct["Vamshi"] = 102
-	acct["Aswini"] = 103
-	acct["Kiran"] = 104
 
-	balance[101] = 1000
-	balance[102] = 2000
-	balance[103] = 3000
-	balance[104] = 4000
-
-	deposit(101, 50)
-	fmt.Println(balance[101])
-
-	trasfer(101, 104, 50)
-	fmt.Println(balance[101], balance[104])
-}
-
-func deposit(accnum int, amount int) {
+func deposit(accnum int, tamount int) {
 	if _, ok := balance[accnum]; ok {
-		balance[accnum] = balance[accnum] + amount
+		balance[accnum] = balance[accnum] + tamount
 	} else {
 		fmt.Println("Account not found")
 	}
 }
 
-func withdraw(accnum int, amount int) {
-	if balance[accnum] > amount {
+func withdraw(accnum int, tamount int) {
+	if balance[accnum] > tamount {
 
-		balance[accnum] = balance[accnum] - amount
+		balance[accnum] = balance[accnum] - tamount
 	} else {
 		fmt.Println("Not sufficient funds")
 	}
 }
-func trasfer(withDrawAccount int, depositAmmount int, amount int) {
-	if balance[withDrawAccount] > amount {
+func trasfer(withDrawAccount int, depositAmmount int, tamount int) {
+	if balance[withDrawAccount] > tamount {
 
-		balance[withDrawAccount] = balance[withDrawAccount] - amount
-		balance[depositAmmount] = balance[depositAmmount] + amount
+		balance[withDrawAccount] = balance[withDrawAccount] - tamount
+		balance[depositAmmount] = balance[depositAmmount] + tamount
 	} else {
 		fmt.Println("Not sufficient funds")
 	}
+}
+func main() {
+	//fmt.Println(a, b, c, d)
+	//fmt.Println(w, x, y, z)
+	deposit(101, 50)
+	fmt.Println()
+
+	withdraw(102, 200)
+	fmt.Println()
+	trasfer(101, 102, 50)
+	fmt.Println()
 }
